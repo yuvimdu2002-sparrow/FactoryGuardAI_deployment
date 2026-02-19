@@ -7,12 +7,12 @@ import time
 
 app = Flask(__name__)
 
-model = joblib.load("model/xgboost_tuned.joblib")
+model = joblib.load("xgboost_tuned.joblib")
 
 # Web page
 @app.route("/")
 def index():
-    return render_template("pred.html")
+    return render_template("guard.html")
 
 # Receive JSON file 
 @app.route("/predict", methods=["POST"])
@@ -39,7 +39,7 @@ def predict_file():
         result="Machine is Normal"
 
     return render_template(
-        "pred.html",
+        "guard.html",
         failure_probability= round(prob, 2),
         latency_ms= round(latency_ms, 2),
         result=result
