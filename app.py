@@ -7,7 +7,7 @@ import time
 
 app = Flask(__name__)
 
-model = joblib.load("model/xgboost_tuned.joblib")
+model = joblib.load("xgboost_tuned.joblib")
 
 # Web page
 @app.route("/")
@@ -48,3 +48,4 @@ def predict_file():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
