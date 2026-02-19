@@ -12,7 +12,7 @@ model = joblib.load("xgboost_tuned.joblib")
 # Web page
 @app.route("/")
 def index():
-    return render_template("pred.html")
+    return render_template("guard.html")
 
 # Receive JSON file 
 @app.route("/predict", methods=["POST"])
@@ -39,8 +39,8 @@ def predict_file():
         result="Machine is Normal"
 
     return render_template(
-        "pred.html",
-        failure_probability= round(prob, 2),
+        "guard.html",
+        failure_probability= round(prob, 4),
         latency_ms= round(latency_ms, 2),
         result=result
     )
@@ -48,4 +48,5 @@ def predict_file():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
