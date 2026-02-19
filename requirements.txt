@@ -2,3 +2,7 @@ gunicorn
 flask
 xgboost
 optuna
+pandas
+joblib
+scikit-learn
+
