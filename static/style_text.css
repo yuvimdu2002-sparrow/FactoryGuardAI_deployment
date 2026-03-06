@@ -103,6 +103,12 @@ form {
     padding: 20px 16px;
     text-align: center;
     box-shadow: var(--glow);
+    margin-top: 3%;
+    overflow: hidden;
+}
+
+.fil{
+    margin-left: 120px;
 }
 
 .fil_line {
